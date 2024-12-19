@@ -1,5 +1,6 @@
 from django.contrib import admin
 from shop.models import Category, Item, Tag
+from shop.filters import PriceFilter
 
 class ItemInline(admin.StackedInline):
     model = Item
@@ -35,7 +36,7 @@ class ItemAdmin(admin.ModelAdmin):
     fields = ['name','description','price','category']
     autocomplete_fields = ['category']
     inlines = [TagInline]
-    list_filter = ['price']
+    list_filter = [PriceFilter]
 
 admin.site.register(Item, ItemAdmin)
 

@@ -6,8 +6,8 @@ class PriceFilter(SimpleListFilter):
 
     def lookups(self, request, model_admin):
         return [
-            ('low', 'Low < 50')
-            ('high', 'High > 50')
+            ('low', 'Low < 50'),
+            ('high', 'High > 50'),
         ]
     
     def queryset(self, request, queryset):
